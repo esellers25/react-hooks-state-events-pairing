@@ -18,13 +18,12 @@ function Comments({commentsInfo}) {
         )
     })
 
-    
     return (
         <main>
-            <button onClick ={hideComments}>{isHidden ? "Show" : "Hide"} Comments</button>
+            <button onClick ={hideComments}>{isHidden ? "Hide" : "Show"} Comments</button>
             <h2>{commentsInfo.comments.length} Comments
             <ul>
-                {commentList}
+                {isHidden && commentList}
             </ul>
             </h2>
         </main> 
