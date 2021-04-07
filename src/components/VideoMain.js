@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 function VideoMain({ videoInfo }) {
-  const [count, setCount] = useState(9210);
-  const [countDown, setCountDown] = useState(185);
+  const [count, setCount] = useState(videoInfo.upvotes);
+  const [countDown, setCountDown] = useState(videoInfo.downvotes);
 
   function handleCountClick() {
     setCount(count + 1);

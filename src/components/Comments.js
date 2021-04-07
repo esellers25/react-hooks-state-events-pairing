@@ -1,7 +1,13 @@
+import {useState} from "react";
 import SingleComment from "./SingleComment";
 
 function Comments({commentsInfo}) {
     
+    const [isHidden, setIsHidden] = useState(true)
+    function hideComments(){
+        setIsHidden(!isHidden)
+    }
+
     const commentList = commentsInfo.comments.map((comment) => {
         return (
             <SingleComment
@@ -14,11 +20,14 @@ function Comments({commentsInfo}) {
 
     
     return (
-        <h2>{commentsInfo.comments.length} Comments
+        <main>
+            <button onClick ={hideComments}>{isHidden ? "Show" : "Hide"} Comments</button>
+            <h2>{commentsInfo.comments.length} Comments
             <ul>
                 {commentList}
             </ul>
-        </h2>
+            </h2>
+        </main> 
     )
 }
 
